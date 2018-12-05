@@ -4,9 +4,78 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>高雄公共藝術資訊</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="./dist/css/all.min.css">
 </head>
 <body>
+  <header class="header">
+    <div class="container text-center">
+      <h1>高雄公共藝術資訊</h1>
+      <div class="row justify-content-center">
+        <div class="col-sm-6">
+          <select name="" id="" class="form-control">
+            <option value="">請選擇行政區</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <section>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="card shadow">
+            <div class="card-header bg-item"></div>
+            <div class="card-body">
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <i class="fas fa-tag"></i>
+                  <span>旭日東昇</span>
+                </li>
+                <li>
+                  <i class="fas fa-user"></i>
+                  <span>江政恭</span>
+                </li>
+                <li>
+                  <i class="fas fa-map-marker-alt"></i>
+                  <span>80660高雄市前鎮區中山三路45號 獅甲國民小學</span>
+                </li>
+                <li>
+                  <i class="fas fa-calendar-alt"></i>
+                  <span>2010</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <nav class="my-5" aria-label="Page navigation example">
+      <ul class="pagination justify-content-center">
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+            <span class="sr-only">Previous</span>
+          </a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+            <span class="sr-only">Next</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
   
+  <footer class="footer text-white text-center py-3">
+    <span>資料來源 : 高雄市政府</span>
+  </footer>
+  <script src="./js/all.js"></script>
 </body>
 </html>
