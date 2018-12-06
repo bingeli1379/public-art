@@ -9534,13 +9534,11 @@ html {
   background-color: #888;
 }
 
-.item-height {
-  height: 200px;
-}
-
-.bg-cover {
+.bg-item {
   background-size: cover;
   background-position: center center;
+  height: 200px;
+  background-image: url(http://opendata.khcc.gov.tw/upload/PublicArt/20120704193459591.jpg);
 }
 
 .link-color a {
