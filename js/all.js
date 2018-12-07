@@ -24,7 +24,7 @@
   function createPagination () {
     const xhr = new XMLHttpRequest();
     let SelectName = items_option.value;
-    if( !SelectName ) {
+    if( !SelectName || SelectName == '所有區域' ) {
     xhr.open('get','https://data.kcg.gov.tw/api/action/datastore_search?resource_id=92290ee5-6e61-456f-80c0-249eae2fcc97&limit=999', true);
     } else {
       xhr.open('get',`https://data.kcg.gov.tw/api/action/datastore_search?resource_id=92290ee5-6e61-456f-80c0-249eae2fcc97&q=${SelectName}`, true);
@@ -36,6 +36,9 @@
       let pageNum = Math.ceil(datas.length / 10);
       const item_page = document.querySelector('#item_page');
       let str = '';
+      if ( !SelectName ) {} else {
+        document.querySelector('.items_title').textContent = SelectName;
+      }
       for(i=0; i<pageNum; i++){
         str += `<li class="page-item"><a class="page-link" href="#">${i+1}</a></li>`;
       }
