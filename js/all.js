@@ -102,7 +102,7 @@
     document.querySelector('#items_content').innerHTML = str
     changepage(datas, 1);
 
-
+    // 換頁功能
     let pages = document.querySelectorAll('.item_pages');
     pages.forEach(page => {
       page.addEventListener('click', function() {
@@ -116,7 +116,6 @@
       if ( x < 1) { x = 1};
       changepage( datas, x)
     })
-
     document.querySelector('.item_pages_next').addEventListener('click', function () {
       x = parseInt(x) + 1
       if ( x > pageNum) {x = pageNum}
@@ -124,17 +123,21 @@
     })
   }
 
+  // 分頁active與卡片顯示
   function changepage ( datas, x) {
     let cuttentpage = x
-    let pageNum = Math.ceil(datas.length / 10);
     let endpage = 10 + (cuttentpage-1)*10 ;
     if ( endpage > datas.length){endpage = datas.length};
 
-    document.querySelectorAll('#items_content > div')
-    .forEach( item => item.style.display = 'none');
-
+    document.querySelectorAll('#items_content > div').forEach( function (item) {
+      item.style.display = 'none';
+      item.style.opacity = 0
+    })
     for (let i = (cuttentpage-1)*10; i < endpage; i++) {
       document.querySelectorAll('#items_content > div')[i].style.display = 'block';
+      setTimeout(() => {
+        document.querySelectorAll('#items_content > div')[i].style.opacity = 1;
+      }, 10);
     }
     document.querySelectorAll('#item_page li').forEach(element => {
       element.classList.remove('active')
@@ -142,6 +145,7 @@
     document.querySelectorAll('#item_page li')[x].classList.add('active')
   }
 
+  // 執行
   createSelect ();
   createPagination ();
   items_option.addEventListener('change', createPagination, false)

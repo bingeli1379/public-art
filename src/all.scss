@@ -26,3 +26,6 @@ html{
 .link-color a{
   color: #faf7e3;
 }
+#items_content > div {
+  transition: opacity 1.5s;
+}

@@ -9544,3 +9544,8 @@ html {
 .link-color a {
   color: #faf7e3;
 }
+
+#items_content > div {
+  -webkit-transition: opacity 1.5s;
+  transition: opacity 1.5s;
+}
