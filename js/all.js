@@ -163,6 +163,21 @@
     } else {
     document.querySelectorAll('#item_page li')[x].classList.add('active')
     }
+
+    if ( x == 1 ) {
+      setTimeout(function(){
+        document.querySelector('.item_pages_pre').setAttribute('href', 'javascript: void(0)')
+      }, 10)
+    } else {
+      document.querySelector('.item_pages_pre').setAttribute('href', '#')
+    }
+    if ( x == pageNum ) {
+      setTimeout(function(){
+        document.querySelector('.item_pages_next').setAttribute('href', 'javascript: void(0)')
+      }, 10)
+    } else {
+      document.querySelector('.item_pages_next').setAttribute('href', '#')
+    }
   }
 
   // 執行
