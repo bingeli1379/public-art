@@ -73,8 +73,8 @@
         <div class="card shadow">
           <div class="card-header d-flex align-items-end justify-content-between bg-item" 
           style="background-image: url(${data.Picture1})">
-            <h5 class="text-white mb-0">${data.Name}</h5>
-            <h6 class="text-white mb-0">${data.Zone}</h6>
+            <h5 class="text-white mb-0 bg-black">${data.Name}</h5>
+            <h6 class="text-white mb-0 bg-black">${data.Zone}</h6>
           </div>
           <div class="card-body">
             <ul class="list-unstyled mb-0">
@@ -94,12 +94,27 @@
                 <i class="fas fa-tag"></i>
                 <span>${data.Ticketinfo}</span>
               </li>
+              <li>
+                <button type="button" class="btn btn-primary mt-2 card_button">詳細介紹</button>
+                <div class="mt-2 card_describe_hidden">
+                  <p class="px-2 py-2 mb-0">${data.Toldescribe}</p>
+                </div>
+              </li>
             </ul>
           </div>
         </div>
       </div>`;
     });
     document.querySelector('#items_content').innerHTML = str
+    
+    // 卡片介紹縮放效果
+    document.querySelectorAll('.card_button').forEach(element =>
+      element.addEventListener('click', function () {
+        element.parentNode.childNodes[3].classList.toggle('card_describe_visible');
+        element.parentNode.childNodes[3].classList.toggle('card_describe_hidden');
+      })
+    )
+
     changepage(datas, 1);
 
     // 換頁功能
@@ -127,6 +142,7 @@
   function changepage ( datas, x) {
     let cuttentpage = x
     let endpage = 10 + (cuttentpage-1)*10 ;
+    let pageNum = Math.ceil(datas.length / 10);
     if ( endpage > datas.length){endpage = datas.length};
 
     document.querySelectorAll('#items_content > div').forEach( function (item) {
@@ -142,7 +158,11 @@
     document.querySelectorAll('#item_page li').forEach(element => {
       element.classList.remove('active')
     });
+    if ( pageNum == 1 ) {
+      document.querySelector('#item_page li').classList.add('active')
+    } else {
     document.querySelectorAll('#item_page li')[x].classList.add('active')
+    }
   }
 
   // 執行

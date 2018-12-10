@@ -5,15 +5,9 @@
 html{
   background-color: white;
 }
-.header{
-  background-color: #faf7e3;
-  padding-top: 70px;
-  padding-bottom: 100px;
-
-  h1{
-    margin-bottom: 90px;
-  }
-}
+.header h1{
+  margin-bottom: 90px;
+} 
 .footer{
   background-color: #888
 }
@@ -21,11 +15,37 @@ html{
   background-size: cover;
   background-position: center center;
   height: 200px;
-  background-image: url(http://opendata.khcc.gov.tw/upload/PublicArt/20120704193459591.jpg)
 }
 .link-color a{
   color: #faf7e3;
 }
 #items_content > div {
   transition: opacity 1.5s;
+}
+.slide_height{
+  height: 400px;
+}
+.headerTitle{
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.bg-black{
+  background: rgba(0, 0, 0, .4);
+  padding: .3rem;
+  border-radius: 5px;
+}
+.pt-8{
+  padding-top: 8rem;
+}
+.card_describe_visible{
+  max-height: 600px;
+  transition: max-height 1s;
+  overflow: hidden;
+}
+.card_describe_hidden{
+  max-height: 0px;
+  transition: max-height 1s;
+  overflow: hidden;
 }
