@@ -67,8 +67,18 @@
   // 初始化內容卡片
   function createCard (datas) {
     let str = '';
+    let free = '';
     let pageNum = Math.ceil(datas.length / 10);
     datas.forEach(data => {
+      if( !data.Ticketinfo == '' ) {
+      free = `
+        <li class="text-info">
+          <i class="fas fa-tag"></i>
+          <span>${data.Ticketinfo}</span>
+        </li>`
+      } else {
+        free = ''
+      }
       str += `<div class="col-sm-6 mb-5">
         <div class="card shadow">
           <div class="card-header d-flex align-items-end justify-content-between bg-item" 
@@ -90,10 +100,7 @@
                 <i class="fas fa-phone"></i>
                 <span>${data.Tel}</span>
               </li>
-              <li class="text-info">
-                <i class="fas fa-tag"></i>
-                <span>${data.Ticketinfo}</span>
-              </li>
+              ${free}
               <li>
                 <button type="button" class="btn btn-primary mt-2 card_button">詳細介紹</button>
                 <div class="mt-2 card_describe_hidden">
@@ -164,6 +171,7 @@
     document.querySelectorAll('#item_page li')[x].classList.add('active')
     }
 
+    // 前後換頁不能點
     if ( x == 1 ) {
       setTimeout(function(){
         document.querySelector('.item_pages_pre').setAttribute('href', 'javascript: void(0)')
@@ -185,5 +193,4 @@
   createPagination ();
   items_option.addEventListener('change', createPagination, false)
 
-  
 }());
